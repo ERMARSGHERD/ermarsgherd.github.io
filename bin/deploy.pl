@@ -24,11 +24,6 @@ remove_tree(keys %files);
 # Move everything in site up a level
 system("mv _site/* .");
 
-# Add domain info
-open(my $fh, '>', 'CNAME');
-say {$fh} "pjf.id.au";
-close($fh);
-
 # Tell github it shouldn't run jekyll a second time.
 open(my $nojekyll, '>', '.nojekyll');
 close($nojekyll);
